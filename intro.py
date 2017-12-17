@@ -1,7 +1,16 @@
 import sys,time,random
-from terminaltables import AsciiTable
+from mainmenu import mainmenu
 
+# Slow Type Function
+typing_speed = 50 #wpm
+def slow_type(t):
+    for l in t:
+        sys.stdout.write(l)
+        sys.stdout.flush()
+        time.sleep(random.random()*10.0/typing_speed)
+    print ('')
 
+# Title prompt... probably a better way to do this.
 print(" 888888ba                                                        dP ")
 print(" 88    `8b                                                       88")
 print("a88aaaa8P' .d8888b. 88d888b. .d8888b. .d8888b. 88d888b. .d8888b. 88")
@@ -28,16 +37,9 @@ print("oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo")
 
 name = raw_input("\nPlease Type A Name: ")
 
-typing_speed = 50 #wpm
-def slow_type(t):
-    for l in t:
-        sys.stdout.write(l)
-        sys.stdout.flush()
-        time.sleep(random.random()*10.0/typing_speed)
-    print ''
-
 slow_type("\nWelcome " + name + ".")
 
 slow_type("Lets Get Started!")
+
 
 mainmenu()
