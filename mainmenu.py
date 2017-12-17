@@ -14,7 +14,7 @@ option3 = 'Enter 3 For ATM'
 option4 = 'Enter 4 For Bill Payment'
 option5 = 'Enter 5 For Housing Options' + Style.RESET_ALL
 
-money = 0
+money = 5000
 health = 100
 meals = 6
 month = 'January'

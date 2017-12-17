@@ -1,7 +1,7 @@
 import sys,time,random
 from mainmenu import mainmenu
 
-# Slow Type Function
+# Slow Type Function. took it from the internet.
 typing_speed = 50 #wpm
 def slow_type(t):
     for l in t:
