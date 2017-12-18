@@ -40,21 +40,22 @@ def jobselect():
     table = AsciiTable(jobTable)
     print table.table
         
-    jobselection = int(raw_input("Please Enter a Selection or press Enter to go Back: "))
+    jobselection = raw_input("Please Enter a Selection or press Enter to go Back: ")
     
-    if jobselection == 1:
+    if jobselection == '1':
         choice = raw_input("Are you sure you want Cashier as Your Job? <y/n>: ")
         if choice == 'y':
             slow_type("Congrats Your Application Has been Accepted!")
             slow_type("You will Now Make $56 per Day")
+            jobselection = 1
             clear()
         if choice == 'n':
             jobselect()
         else:
             jobselect()
-    if jobselection == 2:
+    if jobselection == '2':
         print('fix me!')
-    if jobselection == 3:
+    if jobselection == '3':
         print('fix me!')
     else:
         from mainmenu import mainmenu

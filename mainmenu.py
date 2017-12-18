@@ -10,9 +10,10 @@ clear = lambda: os.system('cls')
 # Variable Initialization
 option1 = Style.BRIGHT + Fore.WHITE + 'Enter 1 For Job Selection'
 option2 = 'Enter 2 For Shopping'
-option3 = 'Enter 3 For ATM'
-option4 = 'Enter 4 For Bill Payment'
-option5 = 'Enter 5 For Housing Options' + Style.RESET_ALL
+option3 = 'Enter 3 For Banking/Bill Pay'
+option4 = 'Enter 4 For College Center'
+option5 = 'Enter 5 For Housing Options'
+option6 = 'Enter 6 For The Dark Side...' + Style.RESET_ALL
 
 money = 5000
 health = 100
@@ -40,12 +41,16 @@ def menuselect():
     print(option3)
     print(option4)
     print(option5)
+    print(option6)
 
     menusel = int(raw_input("Please make a selection: "))
     
     if menusel == 1:
         jobselect()
+    if menusel == 2:
+        from shopping import shopmenu
+        shopmenu()
     else:
-        print('Error Please Enter a Valid Selection')
+        print(Fore.RED + 'Error Please Enter a Valid Selection' + Style.RESET_ALL)
         raw_input("Press enter to continue...")
-        menuselect()    
+        mainmenu()    
