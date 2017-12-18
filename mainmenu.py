@@ -50,6 +50,9 @@ def menuselect():
     if menusel == 2:
         from shopping import shopmenu
         shopmenu()
+    if menusel == 6:
+        from darksidemenu import Dmenu
+        Dmenu()
     else:
         print(Fore.RED + 'Error Please Enter a Valid Selection' + Style.RESET_ALL)
         raw_input("Press enter to continue...")
