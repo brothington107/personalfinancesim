@@ -1,5 +1,5 @@
 from terminaltables import AsciiTable
-from jobselection import jobselect
+from jobselection import jobselect, jobSel
 from colorama import init, Fore, Style
 import os
 
@@ -13,7 +13,8 @@ option2 = 'Enter 2 For Shopping'
 option3 = 'Enter 3 For Banking/Bill Pay'
 option4 = 'Enter 4 For College Center'
 option5 = 'Enter 5 For Housing Options'
-option6 = 'Enter 6 For The Dark Side...' + Style.RESET_ALL
+option6 = 'Enter 6 For The Dark Side...'
+option7 = 'Next Day...' + Style.RESET_ALL
 
 money = 5000
 health = 100
@@ -31,8 +32,21 @@ def mainmenu():
     ['${:,.2f}'.format(money), health, meals, month, day],
     ]
     
-    table = AsciiTable(mainTable)
-    print table.table
+    def jobTable():
+        if jobSel == 1:
+            jobName = 'Cashier'
+            jobPay = '$50.00'
+        
+        jobTable = [
+        ['Current Job', 'Daily Pay']
+        [jobName,jobPay]
+        ]
+        
+        job = AsciiTable(jobTable)
+        print job.table
+    
+    main = AsciiTable(mainTable)
+    print main.table
     menuselect()
     
 def menuselect():
@@ -42,7 +56,8 @@ def menuselect():
     print(option4)
     print(option5)
     print(option6)
-
+    print(option7)    
+    
     menusel = int(raw_input("Please make a selection: "))
     
     if menusel == 1:

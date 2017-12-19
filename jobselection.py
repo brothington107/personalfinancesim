@@ -1,6 +1,7 @@
 import os,sys,time,random
 from terminaltables import AsciiTable
-typing_speed = 50 #wpm
+
+typing_speed = 70 #wpm
 def slow_type(t):
     for l in t:
         sys.stdout.write(l)
@@ -47,7 +48,8 @@ def jobselect():
         if choice == 'y':
             slow_type("Congrats Your Application Has been Accepted!")
             slow_type("You will Now Make $56 per Day")
-            jobselection = 1
+            time.sleep(2)
+            jobSel = 1
             clear()
         if choice == 'n':
             jobselect()
