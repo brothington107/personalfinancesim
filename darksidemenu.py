@@ -1,4 +1,4 @@
-from terminaltables import AsciiTable
+from terminaltables import SingleTable
 from colorama import init, Fore, Style
 import os
 
@@ -11,16 +11,21 @@ option2 = 'Enter 2 For Weapon Dealer'
 option3 = 'Enter 3 For Heists Menu'
 option4 = 'Enter 4 For Safehouse Menu' + Style.RESET_ALL
 
+reputation = 0
+wantedLevel = 0
+
+
 def Dmenu():
     clear()
     print('Welcome to the Dark Side')
+    from mainmenu import health, money
 
-    
     darkTable = [
-    [Fore.RED + 'Health', Fore.GREEN + 'Cash', Fore.RED + 'Reputaion', 'Wanted Level' + Style.RESET_ALL],
+    [Fore.RED + 'Health' + Style.RESET_ALL, Fore.GREEN + 'Cash' + Style.RESET_ALL, Fore.RED + 'Reputaion' + Style.RESET_ALL, 'Wanted Level' + Style.RESET_ALL],
+    [ health, money, reputation, wantedLevel],
     ]
     
-    table = AsciiTable(darkTable)
+    table = SingleTable(darkTable)
     print table.table
     
 
